@@ -1,5 +1,5 @@
 import { legacy_createStore as createStore, applyMiddleware, compose } from 'redux'
-import thunkMiddleware from 'redux-thunk'
+import { thunk } from 'redux-thunk'
 import logger from 'redux-logger'
 import rootReducer from '../reducers'
 
@@ -10,7 +10,7 @@ const composeEnhancers = typeof window === 'object' && window.__REDUX_DEVTOOLS_E
   : compose
 
 const middlewares = [
-  thunkMiddleware
+  thunk
 ]
 
 if (process.env.NODE_ENV === 'development') {

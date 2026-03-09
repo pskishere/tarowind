@@ -57,7 +57,11 @@ export default defineConfig<'webpack5'>(async (merge, { command, mode }) => {
               args: [{
                 appType: 'taro',
                 // 下面个配置，会开启 rem -> rpx 的转化
-                rem2rpx: true
+                rem2rpx: true,
+                // Tailwind CSS v4 需要指定 CSS 入口文件
+                cssEntries: [
+                  require('path').resolve(__dirname, '../src/app.scss')
+                ]
               }]
             }
           }
